@@ -40,7 +40,7 @@
 
 #       # 构建
 #       - name: Build VitePress site
-#         run: yarn build
+#         run: pnpm build
 
 #       # 部署
 #       - name: Deploy
