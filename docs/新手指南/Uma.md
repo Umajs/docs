@@ -25,7 +25,7 @@ Express 一体式的架构设计能够让开发者快速的搭建一个 node ser
 - **模型**
 
 相比 Express 中间件执行的线性流程，Koa 采用堆栈形式的先进后出，可以更全面的对 HTTP 流程做出响应，下图为 Koa 洋葱模型：  
-![Koa onion](../../public/images/KoaOnion.png)
+![Koa onion](../../public/images/koaOnion.png)
 
 Express 中间件只有两个参数 request 与 response，Koa 2.x 比 Express 增加了一个上下文的对象
 [Context](https://github.com/koajs/koa/blob/master/docs/api/context.md)，
