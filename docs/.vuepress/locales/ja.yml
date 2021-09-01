@@ -1,0 +1,17 @@
+/ja/:
+  home: /ja/
+  selectLanguageName: 日本語
+  selectLanguageText: Language
+  selectLanguageAriaLabel: Language
+  lastUpdatedText: Last Updated
+  contributorsText: Contributors
+  tip: Tips
+  notFound:
+    - The page you’re looking for can’t be found.
+    - Not Found
+  backToHome: Back to home
+  backToTop: Back to top
+  openInNewWindow: open in new window
+  warning: Warning
+  danger: Danger
+  editLinkText: Edit this page on GitHub

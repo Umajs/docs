@@ -1,0 +1,23 @@
+{
+  "default": true,
+  "MD003": {
+    "style": "atx"
+  },
+  "MD004": {
+    "style": "dash"
+  },
+  "MD041": false,
+  "MD026": false,
+  "MD013": false,
+  "MD024": {
+    "allow_different_nesting": true
+  },
+  "MD033": {
+    "allowed_elements": ["br", "wbr", "div", "a", "p", "Footer"]
+  },
+  "MD035": {
+    "style": "---"
+  },
+  "MD040": false,
+  "MD046": false
+}

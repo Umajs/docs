@@ -1,0 +1,19 @@
+@import 'config';
+
+header.navbar {
+  background-color: var(--c-navbar);
+  border: none;
+  box-shadow: var(--box-shadow);
+  backdrop-filter: saturate(180%) blur(20px);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  pointer-events: auto;
+  // 隐藏顶导航上的外域链接图标
+  .navbar-links-wrapper > nav > div > a > span > svg.icon.outbound {
+    display: none;
+  }
+
+  .navbar-links-item > .dropdown-wrapper:hover .dropdown-title > .arrow {
+    transform: rotate(-180deg);
+    transition: all 0.3s;
+  }
+}

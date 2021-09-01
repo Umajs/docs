@@ -1,0 +1,24 @@
+{
+  "name": "UMajs",
+  "short_name": "UMajs",
+  "description": "UMajs",
+  "icons": [
+    {
+      "src": "/img/UMajs.69973084.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/img/UMajs.69973084.png",
+      "sizes": "295x295",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "orientation": "natural",
+  "scoop": "index.html",
+  "theme_color": "#3367D6"
+}

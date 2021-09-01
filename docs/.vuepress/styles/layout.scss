@@ -1,0 +1,79 @@
+.theme-default-content code {
+  color: #ff502c;
+  background-color: #fff5f5;
+}
+
+.theme-container .home {
+  max-width: initial;
+  margin: 0;
+  padding: 3.6rem 0 0;
+}
+
+.theme-container .home .hero {
+  padding: 1px 0;
+  background-color: #0c0000;
+  background-image: url('https://umajs.github.io/home/banner-uma2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.theme-container .home .hero h1,
+.theme-container .home .hero .description {
+  color: #fff;
+}
+
+.theme-container .home .features {
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+}
+
+.theme-container .home .features .feature {
+  display: block;
+  flex-basis: initial;
+  flex-grow: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: initial;
+  padding: 2rem;
+}
+
+.theme-container .home .feature h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.theme-container .home .feature h2::before,
+.theme-container .home .feature h2::after {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 1rem;
+  background: #3eaf7c;
+  content: '';
+}
+
+.theme-container .home .feature h2::after {
+  margin-right: 0;
+  margin-left: 1rem;
+  content: '';
+}
+
+.theme-container .home .feature p {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  text-align: center;
+}
+
+@media (min-width: 960px) {
+  .home .features {
+    max-width: 700px;
+  }
+  .theme-container .home .features .feature {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

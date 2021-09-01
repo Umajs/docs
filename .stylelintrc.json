@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss",
+    "stylelint-a11y",
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "extends",
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "use",
+          "mixin",
+          "function",
+          "if",
+          "return",
+          "each",
+          "debug",
+          "for",
+          "else",
+          "include"
+        ]
+      }
+    ],
+    "indentation": 2,
+    "no-irregular-whitespace": null,
+    "no-missing-end-of-source-newline": null,
+    "max-nesting-depth": 8,
+    "selector-max-compound-selectors": 8,
+    "scss/at-rule-no-unknown": true,
+    "prettier/prettier": true,
+    "comment-empty-line-before": null,
+    "function-name-case": "lower",
+    "color-hex-length": null,
+    "no-invalid-double-slash-comments": null,
+    "no-descending-specificity": null,
+    "declaration-empty-line-before": null,
+    "value-keyword-case": null
+  },
+  "ignoreFiles": [
+    "!./docs/.vuepress/styles/**/*.{css,less,scss}",
+    "!/docs/.vuepress/styles/**/*.*"
+  ]
+}

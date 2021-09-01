@@ -1,0 +1,10 @@
+**/dist/**
+**/node_modules/**
+**/.cache/**
+**/.temp/**
+public
+public
+vite.config.ts
+shims.d.ts
+coverage
+pnpm-lock.yml
