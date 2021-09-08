@@ -35,10 +35,10 @@
 
     - text: SSR
       children:
-        - text: 'React SSR'
-          link: '/新手指南/框架介绍.md'
+        - text: 'React'
+          link: '/服务端渲染/React-ssr.md'
 
-        - text: 'Vue SSR'
+        - text: 'Vue'
           link: '/服务端渲染/Vue-ssr.md'
 
   # sidebar
@@ -130,10 +130,10 @@
 
     - text: 服务端渲染
       children:
-        - text: React-SSR
-          link: /服务端渲染/React-SSR.md
+        - text: React
+          link: /服务端渲染/React-ssr.md
 
-        - text: Vue-SSR
+        - text: Vue
           link: /服务端渲染/Vue-ssr.md
 
     - text: 老项目升级
