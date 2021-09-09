@@ -50,7 +50,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
-          repo: https://github.com/Umajs/umajs.github.io
+          repo: Umajs/umajs.github.io
           target_branch: main
           build_dir: dist
         env:
