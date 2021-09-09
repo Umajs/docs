@@ -253,23 +253,23 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
     /**
      * @todo
      */
-    [
-      'seo2',
-      {
-        author: 'JiaZeng',
-        twitterID: 'UMajs',
-        restrictions: '3+',
-        // seo: () => {
-        //   return {
-        //     'twitter:card': 'summary',
-        //   }
-        // },
-        //   customMeta: (
-        //     meta: [Record<'content' | 'name' | 'charset' | 'http-equiv', string>]
-        //   ) => {
-        //   },
-      },
-    ],
+    // [
+    //   'seo2',
+    //   {
+    //     author: 'JiaZeng',
+    //     twitterID: 'UMajs',
+    //     restrictions: '3+',
+    //     // seo: () => {
+    //     //   return {
+    //     //     'twitter:card': 'summary',
+    //     //   }
+    //     // },
+    //     //   customMeta: (
+    //     //     meta: [Record<'content' | 'name' | 'charset' | 'http-equiv', string>]
+    //     //   ) => {
+    //     //   },
+    //   },
+    // ],
 
     /**
      * @description  use more syntax in your Markdown files.
@@ -277,25 +277,24 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
      */
     [
       'md-enhance',
-      false,
-      // {
-      //   enableAll: true,
-      //   tex: {
-      //     strict: 'ignore',
-      //   },
-      //   presentation: {
-      //     plugins: [
-      //       'highlight',
-      //       'math',
-      //       'search',
-      //       'notes',
-      //       'zoom',
-      //       'anything',
-      //       'audio',
-      //       'chalkboard',
-      //     ],
-      //   },
-      // },
+      {
+        enableAll: true,
+        tex: {
+          strict: 'ignore',
+        },
+        presentation: {
+          plugins: [
+            'highlight',
+            'math',
+            'search',
+            'notes',
+            'zoom',
+            'anything',
+            'audio',
+            'chalkboard',
+          ],
+        },
+      },
     ],
 
     /**

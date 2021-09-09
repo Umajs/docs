@@ -53,5 +53,5 @@ jobs:
           repo: https://github.com/Umajs/umajs.github.io
           target_branch: main
           build_dir: dist
-        # env:
-        #   GH_PAT: ${{ secrets.GH_PAGES_TOKEN }}
+        env:
+          GH_PAT: ${{ secrets.GH_PAGES_TOKEN }}

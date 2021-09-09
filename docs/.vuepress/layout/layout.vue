@@ -4,7 +4,7 @@
       <footer class="docs-footer page-meta">
         <div :class="$style.footerContainer" role="presentation">
           <div :class="$style.docsInfo">
-            MIT Licensed | Copyright © 2021
+            MIT Licensed | Copyright © 2005-present 58.com
           </div>
         </div>
       </footer>
