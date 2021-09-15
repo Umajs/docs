@@ -35,6 +35,7 @@ export default class demo extends BaseService {
 - 注入之后可直接使用无需再进行实例
 
 ```javascript
+// controller
 import DemoService from '../service/demo.service'
 
 export default class Index extends BaseController {
@@ -49,6 +50,7 @@ export default class Index extends BaseController {
 ```
 
 ```javascript
+// service
 import { BaseService } from '@umajs/core'
 
 export default class Demp extends BaseService {
@@ -59,6 +61,8 @@ export default class Demp extends BaseService {
 ```
 
 ### 在非 Controller 中使用 Service 时，必须传入 ctx 进行实例化才能使用。
+
+- 在插件中使用
 
 ```javascript
 // plugin
@@ -71,6 +75,8 @@ export default (uma: Uma, options: any = {}): Koa.Middleware => {
     };
 };
 ```
+
+- 在Aspect切面中使用
 
 ```javascript
 // Aspect
@@ -88,3 +94,7 @@ export default class Method implements IAspect {
   }
 }
 ```
+
+**此外，框架还提供了@Resource和@Inject装饰器来实现`IOC容器`和`依赖注入`**
+
+[IOC 参考文档](./IOC.md)

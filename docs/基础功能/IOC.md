@@ -41,7 +41,9 @@ class Test {
 
 @Inject 修饰器可以将`被@Resource修饰过`的 class 的`实例`注入到指定变量中
 
-例如，我们在`${URSA_ROOT}/model`中创建一个`user.model.ts`，并使用@Resource 将该类实例化后加入到资源容器中
+例如，我们在`${URSA_ROOT}/model`中创建一个`user.model.ts`，并使用@Resource 将该类实例化后加入到资源容器中.
+
+**注意**`inject`传入容器名称为被修饰`class的文件名`，而`非class类名`。比如`Resouce`修饰了`service.user.ts`,使用`@Inject('user')`注入。
 
 ```javascript
 import { Resource } from '@umajs/core'
@@ -118,6 +120,52 @@ export default class Demp extends BaseService {
 
 > @Service 和@Resource 最大的不同是，在@Service 修饰的方法中可以访问到`ctx`上下文对象，而@Resource 没有
 
-### 在非 Controller 中使用 Service 时，必须传入 ctx 进行实例化才能使用。
+
+### 非 Controller 中使用 @Service 时，必须传入 ctx 进行实例化才能使用或者service类不继承BaseService,使用@Resource容器修饰此class。
 
 [Service 参考文档](./Service.md)
+
+**在`service`文件夹目录下使用`@Resource`需要启用非严格目录，初始化Uma实例时设置`strictDir:true`。**
+
+```ts
+const options: TUmaOption = {
+    Router,
+    bodyParser: { multipart: true },
+    strictDir:true, // 启用非严格模式
+    ROOT: __dirname,
+    env: process.argv.indexOf('production') > -1 ? 'production' : 'development',
+};
+const uma = Uma.instance(options);
+uma.start(8058);
+```
+
+```ts
+// service
+import { Inject ,Resource} from '@umajs/core';
+import User from '../model/User';
+@Resource()
+export default class {
+
+    @Inject(User) // or @Inject('User')
+    user: User;
+
+    getDefaultUserAge() {
+        return this.user.getAge();
+    }
+}
+```
+
+```ts
+// controller
+import { BaseController, Path, Result,Inject } from '@umajs/core';
+import UserService from '../service/user.service';
+
+export default class Index extends BaseController {
+    @Path('/user')
+    test() {
+        console.log(this.userService.getDefaultUserAge());
+        return Result.send('get defaultUserAge');
+    }
+}
+
+```
