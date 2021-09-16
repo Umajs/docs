@@ -94,7 +94,8 @@ yarn start
 interface TviewOptions{
     ssr?: boolean, // 全局开启服务端渲染
     cache?: boolean, // 全局使用服务端渲染缓存
-    useEngine?:boolean // 渲染自定义html的页面组件时，选择性开启使用模板引擎
+    useEngine?: boolean, // 渲染自定义html的页面组件时，选择性开启使用模板引擎
+    baseName?: string, //客户端根路由 仅使用react-router时有效
 }
 Result.reactView(viewName:string,initProps?:object,options?:TviewOptions);
 ctx.reactView(viewName:string,initProps?:object,options?:TviewOptions);
@@ -136,12 +137,12 @@ export default class Index extends BaseController {
 }
 ```
 
-## 11、**browserRouter**使用
+## 11、**客户端嵌套路由（react-router）**
 
 > 在页面组件中使用 react-router 时，只能在 controller 中使用，切需要服务端对路由做支持。框架默认集成了 BrowserRouter，无需开发者在页面组件中引入
 
 ```js
-// 页面组件 web/browserRouter/index.js
+// 页面组件 web/home/index.js
 export default class APP extends Component {
     render() {
         return (
@@ -155,12 +156,14 @@ export default class APP extends Component {
     }
 }
 
-// 服务端路由 前后端路由规则必须保持一致
-@Path("/browserRouter","/browserRouter/:path")
+// 服务端路由 前后端路由规则必须保持一致。
+@Path("/home","/home/:path")
 browserRouter() {
-    return Result.reactView('browserRouter',{say:"hi,I am a ReactView"},{cache:true});
+    return Result.reactView('home',{say:"hi,I am a ReactView"},{cache:true,baseName:'home'});
 }
 ```
+
+**注：`baseName`默认为页面组件标识名称。和pages下的页面文件名称保持一致，当服务端根路由和文件名称不一致时，需要给插件传递`baseName`属性，以确保服务端和客户端根路由一致。**
 
 ## 12、**SEO 和自定义 HTML**
 
