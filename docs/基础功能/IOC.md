@@ -120,52 +120,49 @@ export default class Demp extends BaseService {
 
 > @Service 和@Resource 最大的不同是，在@Service 修饰的方法中可以访问到`ctx`上下文对象，而@Resource 没有
 
-
-### 非 Controller 中使用 @Service 时，必须传入 ctx 进行实例化才能使用或者service类不继承BaseService,使用@Resource容器修饰此class。
+### 非 Controller 中使用 @Service 时，必须传入 ctx 进行实例化才能使用或者 service 类不继承 BaseService,使用@Resource 容器修饰此 class。
 
 [Service 参考文档](./Service.md)
 
-**在`service`文件夹目录下使用`@Resource`需要启用非严格目录，初始化Uma实例时设置`strictDir:true`。**
+**在`service`文件夹目录下使用`@Resource`需要启用非严格目录，初始化 Uma 实例时设置`strictDir:true`。**
 
 ```ts
 const options: TUmaOption = {
-    Router,
-    bodyParser: { multipart: true },
-    strictDir:true, // 启用非严格模式
-    ROOT: __dirname,
-    env: process.argv.indexOf('production') > -1 ? 'production' : 'development',
-};
-const uma = Uma.instance(options);
-uma.start(8058);
+  Router,
+  bodyParser: { multipart: true },
+  strictDir: true, // 启用非严格模式
+  ROOT: __dirname,
+  env: process.argv.indexOf('production') > -1 ? 'production' : 'development',
+}
+const uma = Uma.instance(options)
+uma.start(8058)
 ```
 
 ```ts
 // service
-import { Inject ,Resource} from '@umajs/core';
-import User from '../model/User';
+import { Inject, Resource } from '@umajs/core'
+import User from '../model/User'
 @Resource()
 export default class {
+  @Inject(User) // or @Inject('User')
+  user: User
 
-    @Inject(User) // or @Inject('User')
-    user: User;
-
-    getDefaultUserAge() {
-        return this.user.getAge();
-    }
+  getDefaultUserAge() {
+    return this.user.getAge()
+  }
 }
 ```
 
 ```ts
 // controller
-import { BaseController, Path, Result,Inject } from '@umajs/core';
-import UserService from '../service/user.service';
+import { BaseController, Path, Result, Inject } from '@umajs/core'
+import UserService from '../service/user.service'
 
 export default class Index extends BaseController {
-    @Path('/user')
-    test() {
-        console.log(this.userService.getDefaultUserAge());
-        return Result.send('get defaultUserAge');
-    }
+  @Path('/user')
+  test() {
+    console.log(this.userService.getDefaultUserAge())
+    return Result.send('get defaultUserAge')
+  }
 }
-
 ```

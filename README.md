@@ -2,10 +2,6 @@
 
 This site is built with VuePress. Site content is written in Markdown format located in docs.
 
-## Warning
-
-Current branch is based on VuePress@v2, and still in W.I.P. For stable releasae in v1, please see [v1 repo](https://github.com/Umajs/umajs.github.io).
-
 ## Developing
 
 - Clone repository
@@ -20,8 +16,12 @@ git clone git@github.com:Umajs/docs.git
 pnpm # or pnpm install
 ```
 
-- Start local development environment
+- Start local development environment and visit `http://localhost:8080`
 
 ```base
 pnpm dev
 ```
+
+## Deploying
+
+Release deployment powered by [Github Pages](https://pages.github.com/). The site is automatically deployed when commits land in `main`. The domain name is <https://umajs.github.io/>.

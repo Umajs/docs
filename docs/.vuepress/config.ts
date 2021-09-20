@@ -14,7 +14,7 @@ console.log('Mode:', isProd ? 'Production' : 'development')
 
 /**
  * @description Vuepress2 config
- * @link https://v2.vuepress.vuejs.org/reference/config.html
+ * @see https://v2.vuepress.vuejs.org/reference/config.html
  */
 module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
   base: '/',
@@ -119,7 +119,7 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
 
   /**
    * @description Vuepress2 theme config
-   * @link https://v2.vuepress.vuejs.org/reference/theme-api.html
+   * @see https://v2.vuepress.vuejs.org/reference/theme-api.html
    */
   themeConfig: {
     repo: 'https://github.com/Umajs/Umajs',
@@ -155,19 +155,19 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
   plugins: [
     /**
      * @description This plugin will import gtag.js for Google Analytics 4.
-     * @link https://v2.vuepress.vuejs.org/reference/plugin/google-analytics.html
+     * @see https://v2.vuepress.vuejs.org/reference/plugin/google-analytics.html
      */
-    // [
-    //   '@vuepress/google-analytics',
-    //   {
-    //     // we have multiple deployments, which would use different id
-    //     id: process.env.ANALYTICS_ID,
-    //   },
-    // ],
+    [
+      '@vuepress/google-analytics',
+      {
+        // we have multiple deployments, which would use different id
+        id: 'G-8YY0BNNYKN',
+      },
+    ],
 
     /**
      * @description Provide local search to your documentation site
-     * @link https://v2.vuepress.vuejs.org/reference/plugin/search.html
+     * @see https://v2.vuepress.vuejs.org/reference/plugin/search.html
      */
     [
       '@vuepress/plugin-search',
@@ -190,9 +190,10 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
           page.frontmatter.tags ?? [],
       },
     ],
+
     /**
      * @description Algolia DocSearch
-     * @link https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
+     * @see https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
      */
     [
       '@vuepress/docsearch',
@@ -214,9 +215,10 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
       //   },
       // },
     ],
+
     /**
      * @description Register Vue components from component files or directory automatically.
-     * @link https://v2.vuepress.vuejs.org/reference/plugin/register-components.html
+     * @see https://v2.vuepress.vuejs.org/reference/plugin/register-components.html
      */
     [
       '@vuepress/register-components',
@@ -226,7 +228,8 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
     ],
 
     /**
-     * @todo
+     * @description Automatically generate a Sitemap for site
+     * @see https://vuepress-theme-hope.github.io/sitemap
      */
     [
       'sitemap2',
@@ -237,11 +240,14 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
     ],
 
     /**
-     * @Todo
+     * @description PWA support
+     * @see https://vuepress-theme-hope.github.io/pwa
      */
     ['vuepress-plugin-pwa2'],
+
     /**
-     * @todo
+     * @description Automatic generation of detailed feed files
+     * @see https://vuepress-theme-hope.github.io/feed
      */
     [
       'feed2',
@@ -251,61 +257,62 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
     ],
 
     /**
-     * @todo
-     */
-    // [
-    //   'seo2',
-    //   {
-    //     author: 'JiaZeng',
-    //     twitterID: 'UMajs',
-    //     restrictions: '3+',
-    //     // seo: () => {
-    //     //   return {
-    //     //     'twitter:card': 'summary',
-    //     //   }
-    //     // },
-    //     //   customMeta: (
-    //     //     meta: [Record<'content' | 'name' | 'charset' | 'http-equiv', string>]
-    //     //   ) => {
-    //     //   },
-    //   },
-    // ],
-
-    /**
-     * @description  use more syntax in your Markdown files.
-     * @link https://vuepress-theme-hope.github.io/md-enhance/guide/
+     * @description Inject the `<meta>` tag to enhance the search engine optimization of the site
+     * @see https://vuepress-theme-hope.github.io/seo
      */
     [
-      'md-enhance',
+      'seo2',
       {
-        enableAll: true,
-        tex: {
-          strict: 'ignore',
-        },
-        presentation: {
-          plugins: [
-            'highlight',
-            'math',
-            'search',
-            'notes',
-            'zoom',
-            'anything',
-            'audio',
-            'chalkboard',
-          ],
-        },
+        author: 'JiaZeng',
+        twitterID: 'UMajs',
+        restrictions: '3+',
+        // seo: () => {
+        //   return {
+        //     'twitter:card': 'summary',
+        //   }
+        // },
+        //   customMeta: (
+        //     meta: [Record<'content' | 'name' | 'charset' | 'http-equiv', string>]
+        //   ) => {
+        //   },
       },
     ],
 
     /**
+     * @description  use more syntax in your Markdown files.
+     * @see https://vuepress-theme-hope.github.io/md-enhance/guide/
+     */
+    // [
+    //   'md-enhance',
+    //   {
+    //     enableAll: true,
+    //     tex: {
+    //       strict: 'ignore',
+    //     },
+    //     presentation: {
+    //       plugins: [
+    //         'highlight',
+    //         'math',
+    //         'search',
+    //         'notes',
+    //         'zoom',
+    //         'anything',
+    //         'audio',
+    //         'chalkboard',
+    //       ],
+    //     },
+    //   },
+    // ],
+
+    /**
      * @description This plugin will provide a table-of-contents (TOC) component
-     * @link https://v2.vuepress.vuejs.org/reference/plugin/toc.html
+     * @see https://v2.vuepress.vuejs.org/reference/plugin/toc.html
      */
     ['@vuepress/plugin-toc'],
 
     /**
      * @description This plugin will enable syntax highlighting for markdown code fence with Shiki
-     * @link https://v2.vuepress.vuejs.org/reference/plugin/shiki.html
+     * @see https://v2.vuepress.vuejs.org/reference/plugin/shiki.html
      */
     [
       '@vuepress/plugin-shiki',
@@ -314,12 +321,17 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
         ? {
             /**
              * @description shiki theme preview
-             * @link https://vscodethemes.com/
+             * @see https://vscodethemes.com/
              */
             theme: 'github-dark',
           }
         : false,
     ],
+
+    /**
+     * @description Add a debug component to your site. The component will only take effect in development mode
+     * @see https://v2.vuepress.vuejs.org/reference/plugin/debug.html
+     */
     ['@vuepress/plugin-debug'],
   ],
   onWatched: (_, watchers, restart) => {

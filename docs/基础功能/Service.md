@@ -76,7 +76,7 @@ export default (uma: Uma, options: any = {}): Koa.Middleware => {
 };
 ```
 
-- 在Aspect切面中使用
+- 在 Aspect 切面中使用
 
 ```javascript
 // Aspect
@@ -95,6 +95,6 @@ export default class Method implements IAspect {
 }
 ```
 
-**此外，框架还提供了@Resource和@Inject装饰器来实现`IOC容器`和`依赖注入`**
+**此外，框架还提供了@Resource 和@Inject 装饰器来实现`IOC容器`和`依赖注入`**
 
 [IOC 参考文档](./IOC.md)
