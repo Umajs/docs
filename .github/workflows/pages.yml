@@ -1,4 +1,4 @@
-name: page
+name: Pages
 
 on:
   # 每当 push 到 master 分支时触发部署
