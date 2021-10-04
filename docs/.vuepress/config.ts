@@ -123,6 +123,7 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
    */
   themeConfig: {
     repo: 'https://github.com/Umajs/Umajs',
+    logo: './img/UMajs.69973084.png',
     repoLabel: 'Github',
     docsBranch: 'main',
     docsRepo: 'https://github.com/Umajs/docs',
@@ -130,13 +131,13 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
     editLinkPattern: ':repo/edit/:branch/:path',
     themePlugins: {
       mediumZoom: false,
-      backToTop: false,
-      container: {
-        tip: false,
-        warning: false,
-        danger: false,
-        details: false,
-      },
+      // backToTop: false,
+      // container: {
+      //   tip: false,
+      //   warning: false,
+      //   danger: false,
+      //   details: false,
+      // },
     },
     locales: (() => {
       let localeData = {}
@@ -199,9 +200,9 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
       '@vuepress/docsearch',
       false,
       // {
-      //   apiKey: 'd66aafda844027d72f4ff85378d5f2f2',
-      //   indexName: 'yuanshen.site',
-      //   appId: 'J4CYOK33ZS',
+      //   apiKey: '',
+      //   indexName: '',
+      //   appId: '',
       //   locales: {
       //     '/en/': {
       //       placeholder: 'Search',
