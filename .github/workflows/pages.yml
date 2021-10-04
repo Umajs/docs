@@ -44,7 +44,7 @@ jobs:
           run_install: true
 
       # 运行构建脚本
-      - name: Build VitePress site
+      - name: Build
         run: pnpm build
 
       - name: Deploy to GitHub Pages
