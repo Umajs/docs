@@ -40,6 +40,10 @@
 
         - text: 'Vue'
           link: '/服务端渲染/Vue-ssr.md'
+    - text: v1.x
+      children:
+        - text: 'v2.x'
+          link: 'https://umajs.gitee.io/v2'
 
   # sidebar
   sidebar:
