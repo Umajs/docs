@@ -22,7 +22,7 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
   public: 'public',
 
   title: 'UMajs',
-  description: 'UMajs 文档',
+  description: 'Umajs，an easy-to-use NodeJS framework base on Typescript.',
 
   bundler:
     process.env.BUNDLER ??
@@ -104,17 +104,17 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
     '/en/': {
       lang: 'en-US',
       title: 'UMajs',
-      description: '一个简单易用、扩展灵活，基于TypeScript的Node.js Web框架',
+      description: 'A simple, flexible, typescript based node.js Web Framework',
     },
 
     /**
      * Japanese locale config
      */
-    '/ja/': {
-      lang: 'ja-JP',
-      title: 'UMajs',
-      description: '一个简单易用、扩展灵活，基于TypeScript的Node.js Web框架',
-    },
+    // '/ja/': {
+    //   lang: 'ja-JP',
+    //   title: 'UMajs',
+    //   description: '一个简单易用、扩展灵活，基于TypeScript的Node.js Web框架',
+    // },
   },
 
   /**
@@ -122,8 +122,8 @@ module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
    * @see https://v2.vuepress.vuejs.org/reference/theme-api.html
    */
   themeConfig: {
-    repo: 'https://github.com/Umajs/Umajs',
-    logo: './img/UMajs.69973084.png',
+    repo: 'https://github.com/Umajs/Umajs/tree/v1',
+    logo: '/img/UMajs.69973084.png',
     repoLabel: 'Github',
     docsBranch: 'main',
     docsRepo: 'https://github.com/Umajs/docs',
