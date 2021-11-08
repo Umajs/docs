@@ -17,8 +17,8 @@ console.log('Mode:', isProd ? 'Production' : 'development')
  * @see https://v2.vuepress.vuejs.org/reference/config.html
  */
 module.exports = defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
-  base: '/',
-  dest: path.resolve(__dirname, '../../dist'),
+  base: '/v1/',
+  dest: path.resolve(__dirname, '../../dist/v1'),
   public: 'public',
 
   title: 'UMajs',
