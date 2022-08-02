@@ -37,6 +37,7 @@ export default <{ [key: string]: TPluginConfig }>{
       ssr: true, // 全局开启服务端渲染
       cache: false, // 全局使用服务端渲染缓存 开发环境设置true无效
       prefixCDN: '/', // 客户端代码部署CDN前缀
+      useEngine: false, // 全局使用模板渲染引擎渲染，默认为false
     },
   },
 }
@@ -46,6 +47,7 @@ export default <{ [key: string]: TPluginConfig }>{
 
 ```js
    - web # rootDir配置可修改
+        - layout # 用以定制通用的页眉页脚菜单栏，pages目录下的组件会作为children传入，自行放置布局；当存在该目录时，优先加载该目录为index；
         - pages # 固定目录
             - home #页面名称
                 - index.tsx
@@ -94,8 +96,9 @@ yarn start
 interface TviewOptions{
     ssr?: boolean, // 全局开启服务端渲染
     cache?: boolean, // 全局使用服务端渲染缓存
-    useEngine?: boolean, // 渲染自定义html的页面组件时，选择性开启使用模板引擎
+    useEngine?: boolean, // 渲染自定义html的页面组件时，选择性开启使用模板引擎，此处配置优先级最高
     baseName?: string, //客户端根路由 仅使用react-router时有效
+    layout?: boolean, // 开启关闭页面布局layout，当web目录下存在layout文件夹时自动开启，可传入false关闭；
 }
 Result.reactView(viewName:string,initProps?:object,options?:TviewOptions);
 ctx.reactView(viewName:string,initProps?:object,options?:TviewOptions);
